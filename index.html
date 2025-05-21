@@ -438,13 +438,16 @@
 
   <section data-aos="fade-up" data-aos-delay="800">
     <h2>🎁 Сюрприз</h2>
-    <p>Натисни <a href="#">тут</a>, щоб отримати маленький подарунок 😊</p>
+    <p>Натисни <a href="surprise.html" class="sur">тут</a>, щоб отримати маленький подарунок 😊</p>
   </section>
 
   <div class="footer">
     З любов'ю, твій програміст 💻
   </div>
 
+
+
+<!-- ЗБІЛЬШЕННЯ ФОТОГРАФІЙ -->
 <div id="modal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modal-img">
@@ -465,10 +468,22 @@
     }
   }
 </script>
-
+<!-- випадання -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
+
+  <!-- КОНФЕТІ -->
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = function() {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  };
+</script>
 </body>
 </html>

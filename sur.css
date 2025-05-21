@@ -1,0 +1,195 @@
+  * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: #fff0f5;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      margin: 150px auto;
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
+      z-index: 10;
+    }
+    .box:hover { transform: scale(1.05); }
+
+    .lid {
+      width: 220px;
+      height: 30px;
+      background: palevioletred;
+      position: absolute;
+      top: -30px;
+      left: -10px;
+      border-radius: 10px 10px 0 0;
+      transition: transform 0.5s ease;
+      transform-origin: bottom center;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      pointer-events: none;
+      /* background: url('https://i.ibb.co/xg7Qzmx/confetti.gif') center/cover no-repeat; */
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 5;
+    }
+
+    .message, .slideshow, .letter, .audio {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .opened .lid {
+      transform: rotateX(150deg);
+    }
+
+    .opened .confetti,
+    .opened .message,
+    .opened .slideshow,
+    .opened .letter,
+    .opened .audio {
+      opacity: 1;
+    }
+
+    .message {
+      font-size: 1.8em;
+      margin-top: 30px;
+      color: #333;
+    }
+
+   .slideshow {
+  margin: 40px auto 0 auto;
+  max-width: 420px;
+  position: relative;
+  min-height: 520px;
+}
+
+.slide {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(.4,0,.2,1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(255,105,180,0.18);
+  object-fit: cover;
+  max-height: 320px;
+}
+
+.slide p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #c2185b;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  padding: 6px 0;
+}
+    .letter {
+      margin: 50px auto;
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      border: 2px dashed #e6a;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 1.2em;
+      color: #444;
+    }
+
+    /* Стилі для музичного плеєра */
+.audio {
+  margin: 40px auto 0 auto;
+  max-width: 400px;
+  background: #ffe4ef;
+  border-radius: 20px;
+  padding: 20px 10px 10px 10px;
+  box-shadow: 0 4px 16px rgba(255, 105, 180, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio audio {
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  background: #fff0f5;
+  margin-top: 10px;
+}
+
+.audio::before {
+  content: "🎶 Мелодія для тебе";
+  display: block;
+  font-size: 1.1em;
+  color: #c2185b;
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 1px;
+}
+
+/* Анімація для конфеті
+@keyframes confetti-fall {
+  0% { opacity: 0; transform: translateY(-100px) scale(0.7) rotate(0deg);}
+  10% { opacity: 1;}
+  100% { opacity: 1; transform: translateY(100vh) scale(1) rotate(360deg);}
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0;
+  z-index: 20;
+  animation: confetti-fall 2.5s linear forwards;
+}
+
+.opened .confetti-piece {
+  opacity: 1;
+}
+
+.box {
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.opened .box {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.7) translateY(60px) rotate(-15deg);
+} */
+
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0.8;
+      animation: fall 1s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }

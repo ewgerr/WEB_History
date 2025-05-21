@@ -112,6 +112,23 @@
       font-size: 2em;
       color: red;
     }
+
+    .heart:hover {
+      color: #ff69b4;
+      cursor: pointer;
+    }
+
+    .sur {
+      font-size: 2em;
+      color: #ff69b4;
+      text-align: center;
+      margin-top: 20px;
+
+    }
+    .sur:hover {
+      color: #ff1493;
+      cursor: pointer;
+    }
     .footer {
       padding: 50px;
       background-color: #fffafa;
