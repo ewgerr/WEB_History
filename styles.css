@@ -134,3 +134,79 @@
       background-color: #fffafa;
       font-size: 1em;
     }
+
+    /* Адаптивні стилі для мобільних і планшетів */
+@media (max-width: 900px) {
+  header, section {
+    padding: 60px 10px;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  .polaroid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+  }
+  .polaroid-container {
+    width: 180px;
+    padding: 7px;
+  }
+  .paperclip {
+    width: 28px;
+    height: 28px;
+    top: -10px;
+    left: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  header, section {
+    padding: 30px 2vw;
+  }
+  h1 {
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+  }
+  h2 {
+    font-size: 1em;
+    margin-bottom: 0.3em;
+  }
+  p {
+    font-size: 1em;
+    max-width: 98vw;
+    margin-bottom: 1.2em;
+  }
+  .polaroid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .polaroid-container {
+    width: 96vw;
+    min-width: unset;
+    padding: 5px;
+  }
+  .polaroid-photo {
+    border-width: 0.5px;
+  }
+  .polaroid-caption {
+    font-size: 1em;
+    margin-top: 6px;
+  }
+  .paperclip {
+    width: 20px;
+    height: 20px;
+    top: -7px;
+    left: 4px;
+  }
+  .footer {
+    padding: 18px 2vw;
+    font-size: 0.95em;
+  }
+  .sur {
+    font-size: 1.3em;
+    margin-top: 10px;
+  }
+}
